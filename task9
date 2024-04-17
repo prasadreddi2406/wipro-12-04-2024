@@ -1,0 +1,24 @@
+public class task9 {
+    public static String middleSubstring(String str1, String str2, int length) {
+        String concatenated = str1 + str2;
+        String reversed = new StringBuilder(concatenated).reverse().toString();
+        int middleIndex = reversed.length() / 2;
+        int startIndex = middleIndex - length / 2;
+        if (startIndex < 0) {
+            startIndex = 0;
+        }
+        int endIndex = startIndex + length;
+        if (endIndex > reversed.length()) {
+            endIndex = reversed.length();
+        }
+        String middleSubstring = reversed.substring(startIndex, endIndex);
+        return middleSubstring;
+    }
+    public static void main(String[] args) {
+        String str1 = "hello";
+        String str2 = "world";
+        int length = 5;
+        String result = middleSubstring(str1, str2, length);
+        System.out.println("Middle substring: " + result);
+    }
+}
